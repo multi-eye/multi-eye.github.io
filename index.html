@@ -130,16 +130,124 @@
     </div>
     <div class="content has-text-justified">
       <p>
-        Overview of our proposed FDDM. Our method is based on class prototype matching, which distills disease-specific features, and class similarity alignment, which distills inter-class relationships.
+        An overview of our framework is shown below. Our method is based on class prototype matching, which distills disease-specific features, and class similarity alignment, which distills inter-class relationships.
       </p>
        <!-- Your image here -->
-       <img src="static/images/framework.png">
+       <img src="static/images/framework_a.png">
        
 
   </div>
   </div>
 </section>
 
+<section class="section hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+      <h2 class="title is-2">MultiEYE: Dataset and Benchmark for OCT-Enhanced Retinal Disease Recognition from Fundus Images</h2>
+        
+        <div class="is-size-5 publication-authors">
+          <!-- Paper authors -->
+          <span class="author-block">
+            <a href="https://luxuriant0116.github.io/" target="_blank">Lehan Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=4iTfHyQAAAAJ&hl=en" target="_blank">Chubin Ou</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://multi-eye.github.io/" target="_blank">Chongchong Qi</a><sup>3</sup>,</span>
+                <span class="author-block">
+                  <a href="https://multi-eye.github.io/" target="_blank">Lin An</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://multi-eye.github.io/" target="_blank">Mei Jin</a><sup>4</sup>,</span>
+                <span class="author-block">
+                  <a href="https://multi-eye.github.io/" target="_blank">Xiangbin Kong</a><sup>5</sup>,</span>
+              <span class="author-block">
+                <a href="https://xmengli.github.io/" target="_blank">Xiaomeng Li</a><sup>*</sup><sup>1</sup>
+              </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology<br><sup>2</sup>Guangdong Weiren Meditech Co., Ltd<br><sup>3</sup>Yunnan United Vision Innovations Technol-
+                  ogy Co., Ltd.<br><sup>4</sup>Guangdong Hospital of Integrated Traditional Chinese and Western Medicine<br><sup>5</sup>The Second People's Hospital of Foshan</span>
+                <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                     <!-- Arxiv PDF link -->
+                  <span class="link-block">
+                    <a href="https://multi-eye.github.io/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/xmed-lab/MultiEYE" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            <span class="link-block">
+            <a href="https://multi-eye.github.io/" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+            <i class="fab fa-database"></i>
+            </span>
+            <span>Dataset</span>
+            </a>
+            </span>
+              
+
+        </div>
+      </div>
+
+<!-- Paper abstract -->
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Existing multi-modal learning methods on fundus and OCT images mostly require both modalities to be available and strictly paired for training and testing, which appears less practical in clinical scenarios. To expand the scope of clinical applications, we formulate a novel setting, "OCT-enhanced disease recognition from fundus images", that allows for the use of unpaired multi-modal data during the training phase, and relies on the widespread fundus photographs for testing. To benchmark this setting, we present the first large multi-modal multi-class dataset for eye disease diagnosis, MultiEYE, and propose an OCT-assisted Conceptual Distillation Approach (OCT-CoDA), which employs semantically rich concepts to extract disease-related knowledge from OCT images and leverages them into the fundus model. Specifically, we regard the image-concept relation as a link to distill useful knowledge from OCT teacher model to fundus student model, which considerably improves the diagnostic performance based on fundus images and formulates the cross-modal knowledge transfer into an explainable process. Through extensive experiments on the multi-disease classification task, our proposed OCT-CoDA demonstrates remarkable results and interpretability, showing great potential for clinical application. 
+      </p>
+    </div>
+  </div>
+
+</div>
+<div class="column has-text-centered">
+<h2 class="title is-3">Framework</h2>
+</div>
+<div class="content has-text-justified">
+  <p>
+    The Framework of the Proposed OCT-CoDA Method is presented below. The pre-trained OCT model is adopted as the teacher to train the fundus student model. Given a batch of unpaired OCT images and fundus photos, they are fed into separate image encoders to get the extracted features. To implement the conceptual distillation, we first prompt the LLM to generate a concept pool. Secondly, we compute the similarity between image features and concept embeddings for each modality. Finally, the OCT-assisted distillation is performed based on the image-concept similarity. In the inference stage, we input this similarity matrix into a Fully Connected (FC) layer to obtain the prediction score.
+  </p>
+   <!-- Your image here -->
+   <img src="static/images/framework_b.png">
+   
+
+</div>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{wang2023fundus,
+      title={Fundus-Enhanced Disease-Aware Distillation Model for Retinal Disease Classification from OCT Images},
+      author={Wang, Lehan and Dai, Weihang and Jin, Mei and Ou, Chubin and Li, Xiaomeng},
+      booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+      pages={639--648},
+      year={2023},
+      organization={Springer}
+    }</code></pre>
+  </div>
+</section>
 
 <!-- End image carousel -->
 
